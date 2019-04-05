@@ -2,26 +2,24 @@
 
 var express = require('express');
 var router = express.Router();
-var Post = require("../db.json");
+var Posts = require('../db.json');
 
-router.get ('/', function (req,res,next) {
-    console.log (req.params,postId);
+router.get('/', function(req, res, next) {
+    console.log(req.params.postId);
 
-    // make a post request to our Database
-
-    request ({
-        url: 'http://localhost3004/posts' + req.params,postId,
-        method : 'DELETE',
-
+    // Make a post request to our database
+    request({
+        url: 'http://localhost:3004/posts' + req.params.postId,
+        method: 'DELETE',
     },
 
-    function(error,response,body) {
-        var data ={
-            title:"football",
-            posts: Post ,
-            messsage : "successfully deleted"
+    function(error, response, body) {
+        var data = {
+            title: "name of the title",
+            posts: Posts,
+            message: 'successfully deleted'
           };
 
           res.redirect('..');
-    });
 });
+    });
